@@ -1,5 +1,5 @@
 from turtle import*
-
+from time import sleep
 
 def triangle():
     speed(50)
@@ -10,7 +10,9 @@ def triangle():
     forward(100)
     left(120)
     forward(100)
-    exitonclick()
+    # exitonclick()
+    sleep(10)
+    bye()
 
 def polygon():
     speed(50)
@@ -20,7 +22,8 @@ def polygon():
         forward(100)
         left(72)
     hideturtle()
-    exitonclick()
+    sleep(10)
+    bye()
 
 
 def mountains():
@@ -45,7 +48,8 @@ def mountains():
         left(70)
 
     hideturtle()
-    exitonclick()
+    sleep(10)
+    bye()
 
 def _treugolnic():
     pensize(2)
@@ -61,7 +65,8 @@ def cirkel():
         _treugolnic()
         left(10)
     hideturtle()
-    exitonclick()
+    sleep(10)
+    bye()
 
 
 def flower():
@@ -87,7 +92,8 @@ def flower():
     for i in range(7):
         circle(size)
         size += 10
-    exitonclick()
+    sleep(10)
+    bye()
 
 
 def __scwuar(size, color_q):
@@ -115,6 +121,6 @@ def plitcka():
     __scwuar(k, l)
     __scwuar(g, s)
     hideturtle()
-    exitonclick()
-
+    sleep(10)
+    bye()
 
