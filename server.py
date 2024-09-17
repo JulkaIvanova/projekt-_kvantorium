@@ -76,7 +76,7 @@ while True:
                 random_memes = random.randint(0, len(memes)-1)
                 webbrowser.open_new(memes[random_memes])
             elif incommig_data == 'noutes':
-                send(connection, "Выбирете желаемое действие: открыть заметку(1), записать новую замету(2), отредактировать заметку(3)")
+                send(connection, "Выбирете желаемое действие: открыть заметку(1), записать новую заметку(2), отредактировать заметку(3)")
                 answer =  recive(connection, 1024)
                 if answer == "1":
                     send(connection, "Введите название заметки")
@@ -118,8 +118,8 @@ while True:
                         break
                     else:
                         send(connection, "Неверный ответ ;)")
-                rand = random.randint(1, 10)
-                if rand == 7:
+                rand = random.randint(1, 6)
+                if rand in [4]:
                     send(connection, "shut_down")
                     os.system("calc")
                     break
@@ -139,4 +139,7 @@ while True:
     finally:
         connection.close()
         print("Соединение закрыто")
+
+
+
 
