@@ -6,7 +6,7 @@ import subprocess
 import webbrowser
 import pickle as p
 import uuid
-
+from turtleFuncs import*
 
 def read_file(path):
     with open(f"{path}.bin", "rb") as f:
@@ -110,6 +110,10 @@ while True:
                             send(connection, "Неверное имя файла")
                         else:
                             send(connection, f"Заметка {name} дополнена")
+                    else:
+                        send(connection, "Вы забыли выбрать действие")
+                else:
+                    send(connection, "Такой команды не существует")
             elif incommig_data == 'russian_roulette':
                 send(connection, "Готовы? (введите да для начала)")
                 while True:
@@ -125,6 +129,30 @@ while True:
                     break
                 else:
                     send(connection, "Вам повезло!")
+            elif incommig_data == 'turtle':
+                send(connection, "Выбирете желаемое действие: \nнарисовать треугольник(1), \nнарисовать многоугольник(2), \nнарисовать горы(3), \nнарисовать колесо(4), \nнарисовать цветок(5), \nнарисовать плитку(6)")
+                acttion = recive(connection, 1024)
+                if acttion == "1":
+                    triangle()
+                    send(connection, "Успешно")
+                elif acttion == "2":
+                    polygon()
+                    send(connection, "Успешно")
+                elif acttion == "3":
+                    mountains()
+                    send(connection, "Успешно")
+                elif acttion == "4":
+                    cirkel()
+                    send(connection, "Успешно")
+                elif acttion == "5":
+                    flower()
+                    send(connection, "Успешно")
+                elif acttion == "6":
+                    plitcka()
+                    send(connection, "Успешно")
+                else:
+                    send(connection, "Такой команды не существует")
+                
                     
                     
 
@@ -139,7 +167,3 @@ while True:
     finally:
         connection.close()
         print("Соединение закрыто")
-
-
-
-
