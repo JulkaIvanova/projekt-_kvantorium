@@ -8,6 +8,7 @@ import pickle as p
 import uuid
 from turtleFuncs import*
 
+
 def read_file(path):
     with open(f"{path}.bin", "rb") as f:
         f.read()
@@ -152,6 +153,9 @@ while True:
                     send(connection, "Успешно")
                 else:
                     send(connection, "Такой команды не существует")
+            elif incommig_data == "help":
+                send(connection, "Набор команд:\nturtle\nrussian_roulette\nnoutes\nrandom\nbalance\nclicker\nshut_down\nsystem\ncheck_output")
+                
                 
                     
                     
